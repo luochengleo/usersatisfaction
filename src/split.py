@@ -2,7 +2,11 @@
 __author__ = 'luocheng'
 filepath = '/home/cluo/summer2014/word2vec/corpus/sessionmerge.txt'
 fout = open('../result/longsessions.txt','w')
-for l in open(filepath).readlines()[0:1000000]:
+count = 0
+for l in open(filepath):
+    count +=1
+    if count >= 1000000:
+        break
     segs = l.strip(' ')
     if len(segs)<5:
         continue
