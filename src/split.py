@@ -16,7 +16,7 @@ for l in open(filepath):
         for s in segs:
             if 'P@' in s:
                 qlist.append(s.replace('P@',''))
-        if len(qlist)>5:
+        if len(set(qlist))>5:
             try:
                 fout.write(' '.join([item.decode('cp936').encode('utf8') for item in qlist])+'\n')
             except:
