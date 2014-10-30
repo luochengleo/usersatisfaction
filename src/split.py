@@ -9,6 +9,7 @@ for l in open(filepath):
         break
     segs = l.strip(' ')
     if len(segs)<5:
+        print 'short 1',len(segs)
         continue
     else:
         qlist = list()
@@ -17,4 +18,6 @@ for l in open(filepath):
                 qlist.append(s.replace('P@',''))
         if len(qlist)>5:
             fout.write(' '.join([item.decode('cp936').encode('utf8') for item in qlist])+'\n')
+        else:
+            print 'short 2',len(qlist)
 fout.close()
