@@ -25,8 +25,10 @@ for l in open(filepath):
                         writen.add(item)
                     else:
                         pass
+
             except:
                 pass
+            fout.write('\n')
         else:
             pass
             # print 'short 2',len(qlist)
