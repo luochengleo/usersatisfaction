@@ -18,7 +18,13 @@ for l in open(filepath):
                 qlist.append(s.replace('P@',''))
         if len(set(qlist))>5:
             try:
-                fout.write(' '.join([item.decode('cp936').encode('utf8') for item in qlist])+'\n')
+                writen = set()
+                for item in qlist:
+                    if item not in writen:
+                        fout.write(item.decode('cp936').encode('utf8') + ' ')
+                        writen.add(item)
+                    else:
+                        pass
             except:
                 pass
         else:
