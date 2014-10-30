@@ -7,7 +7,7 @@ for l in open(filepath):
     count +=1
     if count >= 1000000:
         break
-    segs = l.strip(' ')
+    segs = l.strip().split(' ')
     if len(segs)<5:
         print 'short 1',len(segs)
         continue
