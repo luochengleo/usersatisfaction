@@ -22,5 +22,6 @@ for l in open(filepath):
             except:
                 pass
         else:
+            pass
             # print 'short 2',len(qlist)
 fout.close()
