@@ -14,7 +14,7 @@ def overlap(item1, item2):
     for c in item2:
         all.add(c)
         c2.add(c)
-    if len(all) - len(c1) - len(c2)<0:
+    if len(all) - len(c1) - len(c2)<-2:
         return True
     else:
         return False
