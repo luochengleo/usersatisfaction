@@ -3,6 +3,29 @@ __author__ = 'luocheng'
 filepath = '/home/cluo/summer2014/word2vec/corpus/sessionmerge.txt'
 fout = open('../result/longsessions.txt','w')
 count = 0
+
+def overlap(item1, item2):
+    all = set()
+    c1 = set()
+    c2 = set()
+    for c in item1:
+        all.add(c)
+        c1.add(c)
+    for c in item2:
+        all.add(c)
+        c2.add(c)
+    if len(all) - len(c1) - len(c2)<0:
+        return True
+    else:
+        return False
+def checkOverlap(lt):
+    for i in range(0,len(lt)-1,1):
+        if overlap(lt[i],lt[i+1]) ==True:
+            continue
+        else:
+            return False
+    return True
+
 for l in open(filepath):
     count +=1
     if count >= 10000000:
@@ -36,24 +59,3 @@ for l in open(filepath):
             # print 'short 2',len(qlist)
 fout.close()
 
-def overlap(item1, item2):
-    all = set()
-    c1 = set()
-    c2 = set()
-    for c in item1:
-        all.add(c)
-        c1.add(c)
-    for c in item2:
-        all.add(c)
-        c2.add(c)
-    if len(all) - len(c1) - len(c2)<0:
-        return True
-    else:
-        return False
-def checkOverlap(lt):
-    for i in range(0,len(lt)-1,1):
-        if overlap(lt[i],lt[i+1]) ==True:
-            continue
-        else:
-            return False
-    return True
