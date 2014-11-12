@@ -14,7 +14,7 @@ def overlap(item1, item2):
     for c in item2:
         all.add(c)
         c2.add(c)
-    if len(all) - len(c1) - len(c2)<-4:
+    if len(all) - len(c1) - len(c2)<-6:
         return True
     else:
         return False
@@ -41,7 +41,7 @@ for l in open(filepath):
         for s in segs:
             if 'P@' in s:
                 qlist.append(s.replace('P@',''))
-        if len(set(qlist))>=3:
+        if len(set(qlist))>=5:
             try:
                 writen = set()
                 towrite = list()
