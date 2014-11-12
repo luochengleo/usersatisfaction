@@ -28,6 +28,8 @@ def checkOverlap(lt):
 
 for l in open(filepath):
     count +=1
+    if count %10000==0:
+        print count
     if count >= 10000000:
         break
     segs = l.strip().split(' ')
