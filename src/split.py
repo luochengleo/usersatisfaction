@@ -30,7 +30,7 @@ for l in open(filepath):
     count +=1
     if count %10000==0:
         print count
-    if count >= 1000000:
+    if count >= 5000000:
         break
     segs = l.strip().split(' ')
     if len(segs)<5:
@@ -55,7 +55,7 @@ for l in open(filepath):
             except:
                 pass
             if len(towrite) >=3 and checkOverlap(towrite) == True:
-                fout.write(','.join(towrite)+'\n')
+                fout.write(' , '.join(towrite)+'\n')
         else:
             pass
             # print 'short 2',len(qlist)
